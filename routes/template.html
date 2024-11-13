@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+ 
+  <title> FORMATO DENICIA EN PDF </title>
+
+</head>
+
+<body>
+  <h1>Formato de Denucia</h1>
+  <P>Formato de denincia generado con la informacion suministrada. La información consignada
+    se presume verifica y esta sujeta a revision y al acompañamiento necesario.
+  </P>
+  <header>
+    <div class="container-logo">
+      <i class="fa-solid fa-heart"></i>
+      <h1 class="logo"><a href="/">PAVICOM</a></h1>
+      <h3 class="logo">Portal Atencion Violencia Contra la Mujer</h3>
+    </div>
+
+  </header>
+  <table>
+    <tr>
+      <td>DENUNCIANTE :</td>
+      <td>{{denunciante_nombre}}</td>
+    </tr>
+    <tr>
+      <td>DENUNCIANTE IDENTIFICACION :</td>
+      <td>{{denunciante_cc}}</td>
+    </tr>
+    <tr>
+      <td>DENUNCIANTE EDAD :</td>
+      <td>{{denunciante_edad}}</td>
+    </tr>
+    <td>CORREO ELECTRONICO :</td>
+    <td>{{email}}</td>
+    </tr>
+    <tr>
+      <td>DENUNCIANTE FECHA NACIMIENTO :</td>
+      <td>{{denunciante_fecha_nacimiento}}</td>
+    </tr>
+    <tr>
+      <td>DENUNCIANTE ESTADO CIVIL :</td>
+      <td>{{denunciante_estado_civil}}</td>
+    </tr>
+    <tr>
+      <td>NOMBRE VICTIMA :</td>
+      <td>{{victima}}</td>
+    </tr>
+    <tr>
+      <td>DENUNCIANTE DOMICILIO :</td>
+      <td>{{denunciante_domicilio}}</td>
+    </tr>
+    <tr>
+      <td>DENUNCIANTE TELEFONO :</td>
+      <td>{{denunciante_telefono}}</td>
+    </tr>
+    <tr>
+      <td>DENUNCIANTE RELACION :</td>
+      <td>{{denunciante_relacion}}</td>
+    </tr>
+    <tr>
+      <td>UBICACION VICTIMA :</td>
+      <td>{{ubicacion_victima}}</td>
+    </tr>
+    <tr>
+      <td>DESCRIPCION DE LOS HECHOS :</td>
+      <td>{{relato_hecho}}</td>
+    </tr>
+    <tr>
+      <td>NOMBRE DE LA VICTIMA :</td>
+      <td>{{victima_nombre}}</td>
+    </tr>
+    <tr>
+      <td>VICTIMA MAYOR DE EDAD :</td>
+      <td>{{victima_mayor}}</td>
+    </tr>
+    <tr>
+      <td>EDAD DE LA VICTIMA :</td>
+      <td>{{victima_edad_aprox}}</td>
+    </tr>
+
+    <tr>
+      <td>FECHA NACIMIENTO VICTIMA :</td>
+      <td>{{victima_fecha_nacimiento}}</td>
+    </tr>
+    <tr>
+      <td>DOMICILIO VICTIMA :</td>
+      <td>{{victima_domicilio}}</td>
+    </tr>
+    <tr>
+      <td>VICTIMA RELACION CON AGRESOR:</td>
+      <td>{{relacion_agresor}}</td>
+    </tr>
+    <tr>
+      <td>TELEFONO VICTIMA :</td>
+      <td>{{victima_telefono}}</td>
+    </tr>
+    <tr>
+      <td>VICTIMA VIVE CON EL ARESOR :</td>
+      <td>{{victima_agresor}}</td>
+    </tr>
+    <tr>
+      <td>VICTIMA DONDE OCURREN LOS HECHOS :</td>
+      <td>{{lugares_victima}}</td>
+    </tr>
+    <tr>
+      <td>NOMBRE DEL AGRESOR :</td>
+      <td>{{agresor_nombre}}</td>
+    </tr>
+    <tr>
+      <td>DOMICILIO DEL AGRESOR :</td>
+      <td>{{agresor_domicilio}}</td>
+    </tr>
+    <tr>
+      <td>PARENTESCO AGRESOR CON VICTIMA :</td>
+      <td>{{agresor_relacion}}</td>
+    </tr>
+    <tr>
+      <td>TELEFONO DEL AGRESOR :</td>
+      <td>{{agresor_telefono}}</td>
+    </tr>
+    <tr>
+      <td>AGRESOR VIVE CON LA VICTIMA :</td>
+      <td>{{agresor_victima_si}}</td>
+    </tr>
+    <tr>
+      <td>LUGAR DONDE EL AGRESOR CONCURRE LOS HECHOS :</td>
+      <td>{{lugares_agresor}}</td>
+    </tr>
+
+  </table>
+</body>
+<style>
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+
+</html>

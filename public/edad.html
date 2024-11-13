@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Cálculo de Edad</title>
+    <script>
+        function calcularEdad() {
+            var fechaNacimiento = new Date(document.getElementById("fecha_nacimiento").value);
+            var hoy = new Date();
+            var edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+            var mes = hoy.getMonth() - fechaNacimiento.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+                edad--;
+            }
+            document.getElementById("edad").value = edad;
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulario con Cálculo de Edad</h1>
+    <form>
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" onchange="calcularEdad()"><br><br>
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad" readonly><br><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

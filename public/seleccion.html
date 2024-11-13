@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Evaluación</title>
+    <style>
+        .ocultar {
+            display: none;
+        }
+    </style>
+    <script>
+        function evaluarSeleccion() {
+            let seleccion = document.getElementById("opcion").value;
+            let camposOcultos = document.getElementById("camposOcultos");
+            if (seleccion === "si") {
+                camposOcultos.style.display = "none";
+            } else if (seleccion === "no") {
+                camposOcultos.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="opcion">Selecciona una opción:</label>
+        <select id="opcion" name="opcion" onchange="evaluarSeleccion()">
+            <option value="">--Selecciona--</option>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select>
+    </form>
+
+    <div id="camposOcultos" class="ocultar">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id"><br>
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario">
+    </div>
+</body>
+</html>

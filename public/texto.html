@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip en HTML</title>
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltip .tooltiptext {
+            font-size: 12px;
+            visibility: none;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            bottom: -125%;
+            left: 50%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="tooltip">Relación con el agresor y/la víctima:
+        <span class="tooltiptext">ejemplo esposo, compañero , amigo </span>
+        <input type="text" id="denunciante_relacion" name="denunciante_relacion" placeholder="Relacion" required> 
+    </div>
+</body>
+</html>

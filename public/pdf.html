@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario DE DENICIA FORMAL</title>
+</head>
+<body>
+    <h1>Formulario para Generar PDF</h1>
+    <form action="/create-pdf" method="POST" target="_blank">
+        <fieldset class="fieldsetusr">
+            <legend class="content-blog"> Formato Registro Denuncia </legend>
+    
+		<div class="content-blog">
+			
+            <h3 class="content-blog">1. DATOS DEL DENUNCIANTE</h3>
+        <div> 
+           <label for="denunciante_nombre" >Nombre Completo:</label>
+           <input type="text" id="denunciante_nombre" name="denunciante_nombre" placeholder="Nombre Completo" required minlength="6" maxlength="80" size="40">
+         
+        <label for="denunciante_cc">C.C. :</label>
+        <input type="text" id="denunciante_cc" name="denunciante_cc" placeholder="Numero identificacion" required >
+        
+			<label for="email">Email</label>
+			<input
+			  type="text"
+			  id="email"
+              name="email"
+			  placeholder="Su Email"
+			  required
+			/>
+		  
+   
+    </div>
+</div>
+
+    <br>
+    <div> 
+		<label for="denunciante_fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="denunciante_fecha_nacimiento" name="denunciante_fecha_nacimiento" placeholder="Fecha Nacimiento" required onchange="calculaEdad()">
+		<label for="denunciante_edad">Edad:</label>
+        <input type="number" id="denunciante_edad" name="denunciante_edad" placeholder="Edad" required >
+
+        <label for="denunciante_estado_civil">Estado Civil:</label>
+        	<select id="denunciante_estado_civil" name="denunciante_estado_civil"  placeholder="Estado Civil" required >
+            <option value="">--Seleccione--</option>
+            <option value="Casado">Casada(o)</option>
+            <option value="Viudo">Viuda(o)</option>
+            <option value="Soltero">Soltera(o)</option>
+			<option value="Union libre">Union libre</option>
+			<option value="Otro">Otro</option>
+        </select>
+
+
+	</div><br>
+	<div>
+        <label for="denunciante_domicilio">Domicilio:</label>
+        <input type="text" id="denunciante_domicilio" name="denunciante_domicilio" placeholder="Direccion" required  minlength="20" maxlength="150" size="40">
+      
+        <label for="denunciante_telefono">Teléfono:</label>
+        <input type="tel" id="denunciante_telefono" name="denunciante_telefono" placeholder="Numero Telefono" required > 
+		<label for="victima">Es la victima :</label>
+        <select id="victima" name="victima" onchange="evaluarSeleccion()" placeholder="Es Victima" required >
+            <option value="">--Seleccione--</option>
+            <option value="S">Si</option>
+            <option value="N">No</option>
+            <option value="O">Otro</option>
+        </select>
+	</div>
+    <br>
+    <div> 
+        <div class="tooltip">Relación con el agresor y/la víctima:
+			<span class="tooltiptext">ejemplo esposo, compañero , amigo </span>
+		    <input type="text" id="denunciante_relacion" name="denunciante_relacion" placeholder="Relacion" required> 
+		</div>
+
+	   <label for="ubicacion_victima">¿Dónde se encuentra la víctima?</label>
+        <input type="text" id="ubicacion_victima" name="ubicacion_victima" placeholder="Ciudad" required ><br><br>
+        <label for="relato_hecho">Relato del hecho que denuncia:</label>
+        <textarea id="relato_hecho" name="relato_hecho" rows="5" cols="70" placeholder="Descripcion de los hechos" required ></textarea><br><br>
+    </div>
+    <hr>    
+	<div class="content-blog">
+        <h3 class="content-blog">2. DATOS DE LA VÍCTIMA</h3>
+	</div>	
+       <div id="ocultar">
+		<div> 
+        <label for="victima_nombre">Nombre Completo:</label>
+        <input type="text" id="victima_nombre" name="victima_nombre" placeholder="Nombre Completo" minlength="20" maxlength="80" size="40">
+        
+        <label for="victima_mayor">Es Mayor de Edad :</label>
+        <select id="victima_mayor" name="victima_mayor">
+            <option value="">--Seleccione--</option>
+            <option value="S">Si</option>
+            <option value="N">No</option>
+        </select>
+        <label for="victima_edad_aprox">Edad :</label>
+        <input type="number" id="victima_edad_aprox" name="victima_edad_aprox" placeholder="Edad">
+    </div>
+	<!-- div oculto si opcion de denunciaente es la victima-->
+    <br>
+    <div>
+        <label for="victima_fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="victima_fecha_nacimiento" name="victima_fecha_nacimiento" placeholder="Fecha Nacimiento" required onchange="calculaEdad()" >
+        <label for="victima_domicilio">Domicilio:</label>
+        <input type="text" id="victima_domicilio" name="victima_domicilio" minlength="20" maxlength="150" size="40">
+    </div>
+   </div>
+	<br>
+
+	<div>		
+        <label for="relacion_agresor">Parentesco o relación con el agresor:</label>
+        <input type="text" id="relacion_agresor" name="relacion_agresor">
+		<label for="victima_telefono">Teléfono:</label>
+        <input type="tel" id="victima_telefono" name="victima_telefono">
+       
+	</div>
+    <br>
+    <div>
+       
+        <label for="victima_agresor">¿Vive con el agresor? :</label>
+        <select id="victima_agresor" name="victima_agresor">
+            <option value="">--Seleccione--</option>
+            <option value="S">Si</option>
+            <option value="N">No</option>
+        </select>
+             
+        <label for="lugares_victima">Lugares donde concurre la víctima:</label>
+        <select id="lugares_victima" name="lugares_victima">
+            <option value="">--Seleccione--</option>
+            <option value="DNF">Dentro del núcleo familiar</option>
+            <option value="FNF">Fuera del núcleo familiar</option>
+        </select>
+		
+    </div>
+    <br><hr>
+	  <div class="content-blog">
+            <h3 class="content-blog">3. DATOS DEL AGRESOR</h3>
+     </div>
+	   <div> 
+        <label for="agresor_nombre">Nombre Completo:</label>
+        <input type="text" id="agresor_nombre" name="agresor_nombre" placeholder="Nombre Completo" required >
+        <label for="agresor_domicilio">Domicilio:</label>
+        <input type="text" id="agresor_domicilio" name="agresor_domicilio" placeholder="Direccion" required>
+       </div><br>
+		<div>
+
+			<div class="tooltip">Parentesco o relación con la víctima:
+				<span class="tooltiptext">ejemplo esposo, compañero , amigo </span>
+				<input type="text" id="agresor_relacion" name="agresor_relacion" placeholder="Tipo de Relacion" required>
+			</div>
+
+	    <label for="agresor_telefono">Teléfono:</label>
+        <input type="tel" id="agresor_telefono" name="agresor_telefono" placeholder="Telfono" required>
+    </div> 
+    <br>
+    <div>
+        <label for="agresor_victima_si">¿Vive con el agresor? :</label>
+        <select id="agresor_victima_si" name="agresor_victima_si" placeholder="Vive con el Agresor" required>
+            <option value="">--Seleccione--</option>
+            <option value="S">Si</option>
+            <option value="N">No</option>
+        </select>
+             
+        <label for="lugares_agresor">Lugares donde concurre el agresor:</label>
+       
+        <select id="lugares_agresor" name="lugares_agresor" placeholder="Lugar Agresion" required>
+            <option value="">--Seleccione--</option>
+            <option value="DNF">Dentro del núcleo familiar</option>
+            <option value="FNF">Fuera del núcleo familiar</option>
+        </select>
+		<br>        
+		<input type="submit" value="Generar PDF">
+    </fieldset>
+
+</body>
+</html>
